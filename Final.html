@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="media/ZUiY.gif" alt="stars" class="star">
+    <img src="media/5l03.gif" alt="ballon" class="ballon">
+    <div class="container">
+        <div class="birthdayCard">
+            <audio id="flipSound" src="media/page-flip1-178322.mp3"></audio>
+            <div class="cardFront">
+                <div class="front-text">
+                    <h3 class="happy">HAPPY</h3>
+                    <h2 class="bday">BIRTHDAY</h2>
+                    <h3 class="toyou">to you!</h3>
+                </div>
+                <div class="wrap-deco">
+                    <div class="decorations"></div>
+                    <div class="decorationsTwo"></div>
+                </div>
+                <div class="wrap-decoTwo">
+                    <div class="decorations"></div>
+                    <div class="decorationsThree"></div>
+                </div>
+                <div class="plate">
+                    <div class="cake"></div>
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <div class="cardInside">
+                <div class="img">
+                    <img src="media/penguin.jpg" alt="Brotherpic" class="bdyboy">
+                    <img src="media/6ob.gif" alt="confetti" class="confetti">
+                </div>
+                <div class="inside-text">
+                    <h3 class="happy">HAPPY</h3>
+                    <h2 class="bday">BIRTHDAY</h2>
+                    <h3 class="toyou">to you!</h3>
+                </div>
+                <div class="wishes">
+                    <p>Divya....</p>
+                    <p>Happy Birthday!! I hope your day is filled with lots of love and laughter! May all your birthday wishes come true.</p>
+                    <p class="name">~your X </p>
+                </div>
+            </div>
+        </div>
+        <button id="homeButton" class="home-btn">🏠 Home</button>
+    </div>
+
+    <img src="media/4SHX.gif" alt="cat" class="cat">
+    
+    <!-- Home button -->
+    <script>
+        document.getElementById("homeButton").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const card = document.querySelector(".birthdayCard");
+            const flipSound = document.getElementById("flipSound");
+            
+            // Play sound on hover
+            card.addEventListener("mouseenter", function () {
+                flipSound.currentTime = 0; 
+                flipSound.play();
+            });
+            
+            // Toggle flip on click
+            card.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent external clicks from affecting the flip state
+                flipSound.currentTime = 0;
+                flipSound.play();
+                card.classList.toggle("open");
+            });
+        });
+    </script>
+</body>
+
+</html>
